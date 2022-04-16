@@ -1,0 +1,100 @@
+Q. “Algorithm X is asymptotically more efficient than Algorithm Y” , what does this mean?
+Ans. X will always be a better choice for large inputs
+
+Q. If the number of primary operations of an algorithm that takes an array of size n as input are 3n^2 + 5n. The worst case time complexity of the algorithm will be ?
+Ans. O(n^2)
+
+Q. What will be the Time Complexity of the following code in terms of ‘n’ ?
+
+Note : Assume k to be a constant value
+
+for(int i = 0; i < n; i++)
+{
+   for(int j = 1 ; j < k; j++)
+    {
+      cout << (i + j ) << endl;
+     }
+ }
+Ans. O(n)
+
+Q. What is the time and space complexity of the following code:
+
+   int a = 0, b = 0;    
+    for (i = 0; i < N; i++) {
+        a = a + 1;  
+    }
+    for (j = 0; j < M; j++) {
+        b = b + 1;
+    }
+Ans. O(N+M) time, O(1) space
+
+Q. Consider the following for loops:
+
+ A) for(i = 0; i < n; i++)
+ B) for(i = 0; i < n; i += 2)
+ C) for(i = 1; i < n; i *= 2)
+ D) for(i = n; i > -1; i /= 2)
+Which loop will execute fastest?
+Ans. C
+
+Q. Given the time complexities of different functions, arrange them in increasing order:
+
+  f1(n) = 2^n
+  f2(n) = n^(5/2)
+  f3(n) = nLogn
+  f4(n) = n^(Logn)  
+Assume n = 10^6.
+Ans. f3 < f2 < f4 < f1
+
+Q. Given two 2-d arrays A and B, each array can be stored either in row-major or column-major order in contiguous memory locations.
+
+The time complexity of an algorithm to compute A × B will be?
+Ans. independent of the storage scheme
+
+Q. What is the time complexity of the following code ?
+
+  int multiplyRecursive(int m, int n){
+    if(n == 1)
+        return m;
+    return m + multiplyRec(m,  n - 1);  
+  }
+Ans. O(n)
+
+Q. The recurrence relation capturing the optimal time of the Tower of Hanoi problem with n discs is.
+
+Ans. T(n) = 2T(n-1) + 1
+
+Q. What is the time complexity of following code ?
+
+  int sumOfDigits(int n)
+  {
+    int sum;
+    if(n < 10){
+        return n;
+    }
+    sum = (n % 10) + sumOfDigits(n / 10);
+    return sum;
+   }
+Ans. O(logn) (log is to the base 10)
+
+Q. What is the worst case time complexity of the following code :
+
+ /* 
+    * V is sorted 
+    * V.size() = N
+    * The function is initially called as 
+       searchNumOccurrence(V, k, 0, N-1)
+ */
+  int searchNumOccurrence(vector<int> &V, int k, int start, int end) 
+   {
+      if (start > end) 
+           return 0;
+      int mid = (start + end) / 2;
+      if (V[mid] < k) 
+          return searchNumOccurrence(V, k, mid + 1, end);
+      if (V[mid] > k) 
+           return searchNumOccurrence(V, k, start, mid - 1);
+
+     return searchNumOccurrence(V, k, start, mid - 1) + 1 + searchNumOccurrence(V, k, mid + 1, end);
+    }
+Ans. O(n)
